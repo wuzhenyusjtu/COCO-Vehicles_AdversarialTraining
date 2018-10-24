@@ -1,0 +1,7 @@
+*.pyc
+*.so
+*.a
+data
+data/*
+fpn_*
+fpn_*/*

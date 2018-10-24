@@ -1,0 +1,142 @@
+INFO:root:2018-10-24 12:53:15.964883
+INFO:root:{'USE_GPU_NMS': True, 'FEAT_STRIDE': [16], 'FPN_FEAT_STRIDES': [4, 8, 16, 32], 'HAS_MASK': True, 'RESNET': {'MAX_POOL': False, 'FIXED_BLOCKS': 1}, 'DATA_DIR': '/home/ksuresh/fpn.pytorch-master/data', 'ROOT_DIR': '/home/ksuresh/fpn.pytorch-master', 'FPN_ANCHOR_SCALES': [8, 16, 32, 64], 'GPU_ID': 0, 'MATLAB': 'matlab', 'POOLING_SIZE': 7, 'ANCHOR_RATIOS': [0.5, 1, 2], 'PIXEL_MEANS': array([[[102.9801, 115.9465, 122.7717]]]), 'CUDA': False, 'CROP_RESIZE_WITH_MAX_POOL': False, 'MOBILENET': {'DEPTH_MULTIPLIER': 1.0, 'FIXED_LAYERS': 5, 'WEIGHT_DECAY': 4e-05, 'REGU_DEPTH': False}, 'EPS': 1e-14, 'FPN_ANCHOR_STRIDE': 1, 'POOLING_MODE': 'align', 'DEDUP_BOXES': 0.0625, 'ANCHOR_SCALES': [8, 16, 32], 'RNG_SEED': 3, 'TRAIN': {'RPN_BBOX_INSIDE_WEIGHTS': [1.0, 1.0, 1.0, 1.0], 'PROPOSAL_METHOD': 'gt', 'USE_ALL_GT': True, 'LEARNING_RATE': 0.001, 'SNAPSHOT_ITERS': 5000, 'STEPSIZE': [30000], 'RPN_POST_NMS_TOP_N': 2000, 'RPN_PRE_NMS_TOP_N': 12000, 'BBOX_REG': True, 'DISPLAY': 20, 'GAMMA': 0.1, 'IMS_PER_BATCH': 1, 'DOUBLE_BIAS': False, 'BN_TRAIN': False, 'BBOX_INSIDE_WEIGHTS': [1.0, 1.0, 1.0, 1.0], 'RPN_FG_FRACTION': 0.5, 'BBOX_NORMALIZE_STDS': [0.1, 0.1, 0.2, 0.2], 'USE_GT': False, 'BATCH_SIZE': 128, 'ASPECT_GROUPING': False, 'BBOX_THRESH': 0.5, 'BG_THRESH_LO': 0.0, 'FG_THRESH': 0.5, 'MAX_SIZE': 1200, 'BG_THRESH_HI': 0.5, 'RPN_NEGATIVE_OVERLAP': 0.3, 'HAS_RPN': True, 'SCALES': [800], 'BBOX_NORMALIZE_TARGETS': True, 'BBOX_NORMALIZE_TARGETS_PRECOMPUTED': True, 'FG_FRACTION': 0.25, 'BBOX_NORMALIZE_MEANS': [0.0, 0.0, 0.0, 0.0], 'RPN_BATCHSIZE': 256, 'SUMMARY_INTERVAL': 180, 'SNAPSHOT_KEPT': 3, 'TRIM_WIDTH': 600, 'RPN_POSITIVE_WEIGHT': -1.0, 'RPN_MIN_SIZE': 8, 'RPN_NMS_THRESH': 0.7, 'TRUNCATED': False, 'SNAPSHOT_PREFIX': 'res101_faster_rcnn', 'USE_FLIPPED': True, 'TRIM_HEIGHT': 600, 'RPN_CLOBBER_POSITIVES': False, 'MOMENTUM': 0.9, 'BIAS_DECAY': False, 'WEIGHT_DECAY': 0.0001, 'RPN_POSITIVE_OVERLAP': 0.7}, 'TEST': {'PROPOSAL_METHOD': 'gt', 'SVM': False, 'NMS': 0.3, 'RPN_NMS_THRESH': 0.7, 'SCALES': [600], 'RPN_POST_NMS_TOP_N': 300, 'MODE': 'nms', 'HAS_RPN': True, 'RPN_PRE_NMS_TOP_N': 6000, 'BBOX_REG': True, 'RPN_MIN_SIZE': 16, 'RPN_TOP_N': 5000, 'MAX_SIZE': 1000}, 'EXP_DIR': 'res101', 'MAX_NUM_GT_BOXES': 50}
+INFO:root:45000 roidb entries
+INFO:root:[session 1][epoch  1][iter    0] loss: 3.1678, lr: 1.00e-03
+INFO:root:			fg/bg=(116/1420), time cost: 13.003151
+INFO:root:			rpn_cls: 0.7014, rpn_box: 0.0267, rcnn_cls: 2.3922, rcnn_box 0.0475
+INFO:root:[session 1][epoch  1][iter  100] loss: 1.6173, lr: 1.00e-03
+INFO:root:			fg/bg=(207/1329), time cost: 189.509299
+INFO:root:			rpn_cls: 0.0904, rpn_box: 0.0747, rcnn_cls: 0.5041, rcnn_box 0.0895
+INFO:root:[session 1][epoch  1][iter  200] loss: 0.7354, lr: 1.00e-03
+INFO:root:			fg/bg=(219/1317), time cost: 189.014993
+INFO:root:			rpn_cls: 0.0822, rpn_box: 0.0928, rcnn_cls: 0.4637, rcnn_box 0.0893
+INFO:root:[session 1][epoch  1][iter  300] loss: 0.7314, lr: 1.00e-03
+INFO:root:			fg/bg=(133/1403), time cost: 186.850373
+INFO:root:			rpn_cls: 0.0717, rpn_box: 0.0198, rcnn_cls: 0.2471, rcnn_box 0.0411
+INFO:root:[session 1][epoch  1][iter  400] loss: 0.7867, lr: 1.00e-03
+INFO:root:			fg/bg=(272/1264), time cost: 188.138424
+INFO:root:			rpn_cls: 0.0777, rpn_box: 0.0560, rcnn_cls: 0.4073, rcnn_box 0.2324
+INFO:root:[session 1][epoch  1][iter  500] loss: 0.8245, lr: 1.00e-03
+INFO:root:			fg/bg=(211/1325), time cost: 189.454993
+INFO:root:			rpn_cls: 0.0587, rpn_box: 0.0706, rcnn_cls: 0.3855, rcnn_box 0.1660
+INFO:root:[session 1][epoch  1][iter  600] loss: 0.8360, lr: 1.00e-03
+INFO:root:			fg/bg=(180/1356), time cost: 189.107183
+INFO:root:			rpn_cls: 0.0320, rpn_box: 0.0575, rcnn_cls: 0.2781, rcnn_box 0.1816
+INFO:root:[session 1][epoch  1][iter  700] loss: 0.8110, lr: 1.00e-03
+INFO:root:			fg/bg=(355/1181), time cost: 190.784021
+INFO:root:			rpn_cls: 0.0432, rpn_box: 0.2315, rcnn_cls: 0.4851, rcnn_box 0.3623
+INFO:root:[session 1][epoch  1][iter  800] loss: 0.7707, lr: 1.00e-03
+INFO:root:			fg/bg=(116/1420), time cost: 189.747543
+INFO:root:			rpn_cls: 0.0548, rpn_box: 0.0167, rcnn_cls: 0.2995, rcnn_box 0.0768
+INFO:root:[session 1][epoch  1][iter  900] loss: 0.8392, lr: 1.00e-03
+INFO:root:			fg/bg=(314/1222), time cost: 190.779243
+INFO:root:			rpn_cls: 0.0582, rpn_box: 0.2847, rcnn_cls: 0.4156, rcnn_box 0.3309
+INFO:root:[session 1][epoch  1][iter 1000] loss: 0.7780, lr: 1.00e-03
+INFO:root:			fg/bg=(246/1290), time cost: 189.117145
+INFO:root:			rpn_cls: 0.0345, rpn_box: 0.0341, rcnn_cls: 0.2746, rcnn_box 0.2315
+INFO:root:[session 1][epoch  1][iter 1100] loss: 0.7788, lr: 1.00e-03
+INFO:root:			fg/bg=(166/1370), time cost: 187.573817
+INFO:root:			rpn_cls: 0.0344, rpn_box: 0.3898, rcnn_cls: 0.2679, rcnn_box 0.1388
+INFO:root:[session 1][epoch  1][iter 1200] loss: 0.7940, lr: 1.00e-03
+INFO:root:			fg/bg=(180/1356), time cost: 189.786219
+INFO:root:			rpn_cls: 0.0255, rpn_box: 0.0312, rcnn_cls: 0.3723, rcnn_box 0.2089
+INFO:root:[session 1][epoch  1][iter 1300] loss: 0.7733, lr: 1.00e-03
+INFO:root:			fg/bg=(166/1370), time cost: 190.220916
+INFO:root:			rpn_cls: 0.0234, rpn_box: 0.2449, rcnn_cls: 0.1875, rcnn_box 0.1170
+INFO:root:[session 1][epoch  1][iter 1400] loss: 0.7705, lr: 1.00e-03
+INFO:root:			fg/bg=(322/1214), time cost: 190.813200
+INFO:root:			rpn_cls: 0.0530, rpn_box: 0.3849, rcnn_cls: 0.3408, rcnn_box 0.2796
+INFO:root:[session 1][epoch  1][iter 1500] loss: 0.7461, lr: 1.00e-03
+INFO:root:			fg/bg=(317/1219), time cost: 191.237025
+INFO:root:			rpn_cls: 0.0422, rpn_box: 0.1385, rcnn_cls: 0.2833, rcnn_box 0.2418
+INFO:root:[session 1][epoch  1][iter 1600] loss: 0.7308, lr: 1.00e-03
+INFO:root:			fg/bg=(182/1354), time cost: 191.243451
+INFO:root:			rpn_cls: 0.0444, rpn_box: 0.0624, rcnn_cls: 0.3060, rcnn_box 0.1457
+INFO:root:[session 1][epoch  1][iter 1700] loss: 0.7424, lr: 1.00e-03
+INFO:root:			fg/bg=(308/1228), time cost: 189.082191
+INFO:root:			rpn_cls: 0.0811, rpn_box: 0.0478, rcnn_cls: 0.4827, rcnn_box 0.2762
+INFO:root:[session 1][epoch  1][iter 1800] loss: 0.7280, lr: 1.00e-03
+INFO:root:			fg/bg=(201/1335), time cost: 192.005770
+INFO:root:			rpn_cls: 0.0356, rpn_box: 0.0598, rcnn_cls: 0.3642, rcnn_box 0.1416
+INFO:root:[session 1][epoch  1][iter 1900] loss: 0.7019, lr: 1.00e-03
+INFO:root:			fg/bg=(242/1294), time cost: 189.185314
+INFO:root:			rpn_cls: 0.0326, rpn_box: 0.1888, rcnn_cls: 0.1983, rcnn_box 0.1785
+INFO:root:[session 1][epoch  1][iter 2000] loss: 0.7324, lr: 1.00e-03
+INFO:root:			fg/bg=(181/1355), time cost: 190.017234
+INFO:root:			rpn_cls: 0.0252, rpn_box: 0.2885, rcnn_cls: 0.0913, rcnn_box 0.1095
+INFO:root:[session 1][epoch  1][iter 2100] loss: 0.7498, lr: 1.00e-03
+INFO:root:			fg/bg=(249/1287), time cost: 191.509697
+INFO:root:			rpn_cls: 0.0466, rpn_box: 0.0769, rcnn_cls: 0.4739, rcnn_box 0.2296
+INFO:root:[session 1][epoch  1][iter 2200] loss: 0.6887, lr: 1.00e-03
+INFO:root:			fg/bg=(118/1418), time cost: 190.275160
+INFO:root:			rpn_cls: 0.0343, rpn_box: 0.0185, rcnn_cls: 0.1722, rcnn_box 0.0718
+INFO:root:[session 1][epoch  1][iter 2300] loss: 0.6845, lr: 1.00e-03
+INFO:root:			fg/bg=(264/1272), time cost: 190.360491
+INFO:root:			rpn_cls: 0.0404, rpn_box: 0.1406, rcnn_cls: 0.3293, rcnn_box 0.2344
+INFO:root:[session 1][epoch  1][iter 2400] loss: 0.6874, lr: 1.00e-03
+INFO:root:			fg/bg=(313/1223), time cost: 190.177535
+INFO:root:			rpn_cls: 0.0489, rpn_box: 0.1617, rcnn_cls: 0.3356, rcnn_box 0.2552
+INFO:root:[session 1][epoch  1][iter 2500] loss: 0.6924, lr: 1.00e-03
+INFO:root:			fg/bg=(296/1240), time cost: 188.469522
+INFO:root:			rpn_cls: 0.0463, rpn_box: 0.3175, rcnn_cls: 0.2795, rcnn_box 0.1831
+INFO:root:[session 1][epoch  1][iter 2600] loss: 0.7173, lr: 1.00e-03
+INFO:root:			fg/bg=(342/1194), time cost: 188.741081
+INFO:root:			rpn_cls: 0.0886, rpn_box: 0.0686, rcnn_cls: 0.4467, rcnn_box 0.2333
+INFO:root:[session 1][epoch  1][iter 2700] loss: 0.7023, lr: 1.00e-03
+INFO:root:			fg/bg=(343/1193), time cost: 188.828807
+INFO:root:			rpn_cls: 0.0547, rpn_box: 0.0721, rcnn_cls: 0.3824, rcnn_box 0.2859
+INFO:root:[session 1][epoch  1][iter 2800] loss: 0.7041, lr: 1.00e-03
+INFO:root:			fg/bg=(244/1292), time cost: 187.091555
+INFO:root:			rpn_cls: 0.0473, rpn_box: 0.0614, rcnn_cls: 0.4141, rcnn_box 0.2221
+INFO:root:[session 1][epoch  1][iter 2900] loss: 0.6672, lr: 1.00e-03
+INFO:root:			fg/bg=(248/1288), time cost: 190.302549
+INFO:root:			rpn_cls: 0.0403, rpn_box: 0.0269, rcnn_cls: 0.2900, rcnn_box 0.2161
+INFO:root:[session 1][epoch  1][iter 3000] loss: 0.6759, lr: 1.00e-03
+INFO:root:			fg/bg=(162/1374), time cost: 189.588432
+INFO:root:			rpn_cls: 0.0340, rpn_box: 0.1734, rcnn_cls: 0.2240, rcnn_box 0.0906
+INFO:root:[session 1][epoch  1][iter 3100] loss: 0.6580, lr: 1.00e-03
+INFO:root:			fg/bg=(222/1314), time cost: 189.008513
+INFO:root:			rpn_cls: 0.0325, rpn_box: 0.0871, rcnn_cls: 0.3101, rcnn_box 0.1630
+INFO:root:[session 1][epoch  1][iter 3200] loss: 0.6729, lr: 1.00e-03
+INFO:root:			fg/bg=(199/1337), time cost: 187.023843
+INFO:root:			rpn_cls: 0.0350, rpn_box: 0.0302, rcnn_cls: 0.2453, rcnn_box 0.1356
+INFO:root:[session 1][epoch  1][iter 3300] loss: 0.6713, lr: 1.00e-03
+INFO:root:			fg/bg=(147/1389), time cost: 188.981759
+INFO:root:			rpn_cls: 0.0275, rpn_box: 0.0137, rcnn_cls: 0.2048, rcnn_box 0.1063
+INFO:root:[session 1][epoch  1][iter 3400] loss: 0.6757, lr: 1.00e-03
+INFO:root:			fg/bg=(309/1227), time cost: 189.845979
+INFO:root:			rpn_cls: 0.0400, rpn_box: 0.3015, rcnn_cls: 0.4749, rcnn_box 0.2650
+INFO:root:[session 1][epoch  1][iter 3500] loss: 0.6567, lr: 1.00e-03
+INFO:root:			fg/bg=(204/1332), time cost: 187.850037
+INFO:root:			rpn_cls: 0.0305, rpn_box: 0.0962, rcnn_cls: 0.3105, rcnn_box 0.1343
+INFO:root:[session 1][epoch  1][iter 3600] loss: 0.6759, lr: 1.00e-03
+INFO:root:			fg/bg=(190/1346), time cost: 189.847817
+INFO:root:			rpn_cls: 0.0320, rpn_box: 0.2257, rcnn_cls: 0.1919, rcnn_box 0.1021
+INFO:root:[session 1][epoch  1][iter 3700] loss: 0.6618, lr: 1.00e-03
+INFO:root:			fg/bg=(384/1152), time cost: 192.139194
+INFO:root:			rpn_cls: 0.0663, rpn_box: 0.1209, rcnn_cls: 0.4949, rcnn_box 0.3324
+INFO:root:save model: fpn_cut_images_0_overlap/res101/pascal_voc/fpn_1_1_3749.pth
+INFO:root:[session 1][epoch  2][iter    0] loss: 0.3607, lr: 1.00e-03
+INFO:root:			fg/bg=(169/1367), time cost: 1.958400
+INFO:root:			rpn_cls: 0.0217, rpn_box: 0.0626, rcnn_cls: 0.1646, rcnn_box 0.1118
+INFO:root:[session 1][epoch  2][iter  100] loss: 0.6510, lr: 1.00e-03
+INFO:root:			fg/bg=(226/1310), time cost: 190.851976
+INFO:root:			rpn_cls: 0.0369, rpn_box: 0.2429, rcnn_cls: 0.2175, rcnn_box 0.1470
+INFO:root:[session 1][epoch  2][iter  200] loss: 0.6241, lr: 1.00e-03
+INFO:root:			fg/bg=(276/1260), time cost: 187.496162
+INFO:root:			rpn_cls: 0.0373, rpn_box: 0.0658, rcnn_cls: 0.3603, rcnn_box 0.2369
+INFO:root:[session 1][epoch  2][iter  300] loss: 0.6425, lr: 1.00e-03
+INFO:root:			fg/bg=(195/1341), time cost: 191.167109
+INFO:root:			rpn_cls: 0.0300, rpn_box: 0.0095, rcnn_cls: 0.2554, rcnn_box 0.1629
+INFO:root:[session 1][epoch  2][iter  400] loss: 0.6560, lr: 1.00e-03
+INFO:root:			fg/bg=(309/1227), time cost: 188.464843
+INFO:root:			rpn_cls: 0.0345, rpn_box: 0.0636, rcnn_cls: 0.3534, rcnn_box 0.2137
+INFO:root:[session 1][epoch  2][iter  500] loss: 0.6622, lr: 1.00e-03
+INFO:root:			fg/bg=(275/1261), time cost: 190.226274
+INFO:root:			rpn_cls: 0.0477, rpn_box: 0.0706, rcnn_cls: 0.2807, rcnn_box 0.1793
+INFO:root:[session 1][epoch  2][iter  600] loss: 0.6552, lr: 1.00e-03
+INFO:root:			fg/bg=(164/1372), time cost: 189.329268
+INFO:root:			rpn_cls: 0.0293, rpn_box: 0.4008, rcnn_cls: 0.1795, rcnn_box 0.0824
+INFO:root:[session 1][epoch  2][iter  700] loss: 0.6334, lr: 1.00e-03
+INFO:root:			fg/bg=(316/1220), time cost: 185.769835
+INFO:root:			rpn_cls: 0.0399, rpn_box: 0.0674, rcnn_cls: 0.2810, rcnn_box 0.2276

@@ -1,0 +1,63 @@
+Called with args:
+Namespace(batch_size=1, cfg_file='cfgs/vgg16.yml', checkepoch=12, checkpoint=461, checksession=1, class_agnostic=False, cuda=True, dataset='pascal_voc', load_dir='./', mGPUs=False, net='res101', parallel_type=0, set_cfgs=None, sig=None, vis=False)
+##############################
+('num_classes:', 11)
+##############################
+Loaded dataset `voc_2007_test` for training
+Set proposal method: gt
+Preparing training data...
+voc_2007_test gt roidb loaded from /home/ksuresh/fpn.pytorch-master/data/cache/voc_2007_test_gt_roidb.pkl
+done
+##############################
+('num_classes:', 11)
+##############################
+548 roidb entries
+input_dir is: fpn_3000_remove_p6_800_1200/res101/pascal_voc
+Loading pretrained weights from data/pretrained_model/resnet101_caffe.pth
+load checkpoint fpn_3000_remove_p6_800_1200/res101/pascal_voc/fpn_1_12_461.pth
+load model successfully!
+Writing pedestrian VOC results file
+Writing people VOC results file
+Writing bicycle VOC results file
+Writing car VOC results file
+Writing van VOC results file
+Writing truck VOC results file
+Writing tricycle VOC results file
+Writing awning-tricycle VOC results file
+Writing bus VOC results file
+Writing motor VOC results file
+VOC07 metric? Yes
+AP for pedestrian = 0.0006
+AP for people = 0.0001
+AP for bicycle = 0.0000
+AP for car = 0.0005
+AP for van = 0.0002
+AP for truck = 0.0065
+AP for tricycle = 0.0000
+AP for awning-tricycle = 0.0000
+AP for bus = 0.0000
+AP for motor = 0.0001
+Mean AP = 0.0008
+~~~~~~~~
+Results:
+0.001
+0.000
+0.000
+0.000
+0.000
+0.006
+0.000
+0.000
+0.000
+0.000
+0.001
+~~~~~~~~
+
+--------------------------------------------------------------
+Results computed with the **unofficial** Python eval code.
+Results should be very close to the official MATLAB eval code.
+Recompute with `./tools/reval.py --matlab ...` for your paper.
+-- Thanks, The Management
+--------------------------------------------------------------
+test time: 230.1902s
+job done!

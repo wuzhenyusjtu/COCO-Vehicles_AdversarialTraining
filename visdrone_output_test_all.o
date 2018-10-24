@@ -1,0 +1,222 @@
+soft nms, varying sigmas
+sigma is: 0.2
+Called with args:
+Namespace(batch_size=1, cfg_file='cfgs/vgg16.yml', checkepoch=15, checkpoint=1272, checksession=1, class_agnostic=False, cuda=False, dataset='pascal_voc', load_dir=['./fpn_remove_6', '--sig', '0.2', '--cuda'], mGPUs=False, net='res101', parallel_type=0, set_cfgs=None, sig=None, vis=False)
+WARNING: You have a CUDA device, so you should probably run with --cuda
+##############################
+('num_classes:', 11)
+##############################
+Loaded dataset `voc_2007_test` for training
+Set proposal method: gt
+Preparing training data...
+voc_2007_test gt roidb loaded from /home/ksuresh/fpn.pytorch-master/data/cache/voc_2007_test_gt_roidb.pkl
+done
+##############################
+('num_classes:', 11)
+##############################
+548 roidb entries
+input_dir is: ./fpn_remove_6/res101/pascal_voc
+Loading pretrained weights from data/pretrained_model/resnet101_caffe.pth
+load checkpoint ./fpn_remove_6/res101/pascal_voc/fpn_1_15_1272.pth
+load model successfully!
+CUDA Error: invalid argument, at line 147
+CUDA Error: invalid argument, at line 154
+sigma is: 0.3
+Called with args:
+Namespace(batch_size=1, cfg_file='cfgs/vgg16.yml', checkepoch=15, checkpoint=1272, checksession=1, class_agnostic=False, cuda=False, dataset='pascal_voc', load_dir=['./fpn_remove_6', '--sig', '0.3', '--cuda'], mGPUs=False, net='res101', parallel_type=0, set_cfgs=None, sig=None, vis=False)
+WARNING: You have a CUDA device, so you should probably run with --cuda
+##############################
+('num_classes:', 11)
+##############################
+Loaded dataset `voc_2007_test` for training
+Set proposal method: gt
+Preparing training data...
+voc_2007_test gt roidb loaded from /home/ksuresh/fpn.pytorch-master/data/cache/voc_2007_test_gt_roidb.pkl
+done
+##############################
+('num_classes:', 11)
+##############################
+548 roidb entries
+input_dir is: ./fpn_remove_6/res101/pascal_voc
+Loading pretrained weights from data/pretrained_model/resnet101_caffe.pth
+load checkpoint ./fpn_remove_6/res101/pascal_voc/fpn_1_15_1272.pth
+load model successfully!
+CUDA Error: invalid argument, at line 147
+CUDA Error: invalid argument, at line 154
+sigma is: 0.4
+Called with args:
+Namespace(batch_size=1, cfg_file='cfgs/vgg16.yml', checkepoch=15, checkpoint=1272, checksession=1, class_agnostic=False, cuda=False, dataset='pascal_voc', load_dir=['./fpn_remove_6', '--sig', '0.4', '--cuda'], mGPUs=False, net='res101', parallel_type=0, set_cfgs=None, sig=None, vis=False)
+WARNING: You have a CUDA device, so you should probably run with --cuda
+##############################
+('num_classes:', 11)
+##############################
+Loaded dataset `voc_2007_test` for training
+Set proposal method: gt
+Preparing training data...
+voc_2007_test gt roidb loaded from /home/ksuresh/fpn.pytorch-master/data/cache/voc_2007_test_gt_roidb.pkl
+done
+##############################
+('num_classes:', 11)
+##############################
+548 roidb entries
+input_dir is: ./fpn_remove_6/res101/pascal_voc
+Loading pretrained weights from data/pretrained_model/resnet101_caffe.pth
+load checkpoint ./fpn_remove_6/res101/pascal_voc/fpn_1_15_1272.pth
+load model successfully!
+CUDA Error: invalid argument, at line 147
+CUDA Error: invalid argument, at line 154
+sigma is: 0.5
+Called with args:
+Namespace(batch_size=1, cfg_file='cfgs/vgg16.yml', checkepoch=15, checkpoint=1272, checksession=1, class_agnostic=False, cuda=False, dataset='pascal_voc', load_dir=['./fpn_remove_6', '--sig', '0.5', '--cuda'], mGPUs=False, net='res101', parallel_type=0, set_cfgs=None, sig=None, vis=False)
+WARNING: You have a CUDA device, so you should probably run with --cuda
+##############################
+('num_classes:', 11)
+##############################
+Loaded dataset `voc_2007_test` for training
+Set proposal method: gt
+Preparing training data...
+voc_2007_test gt roidb loaded from /home/ksuresh/fpn.pytorch-master/data/cache/voc_2007_test_gt_roidb.pkl
+done
+##############################
+('num_classes:', 11)
+##############################
+548 roidb entries
+input_dir is: ./fpn_remove_6/res101/pascal_voc
+Loading pretrained weights from data/pretrained_model/resnet101_caffe.pth
+load checkpoint ./fpn_remove_6/res101/pascal_voc/fpn_1_15_1272.pth
+load model successfully!
+CUDA Error: invalid argument, at line 147
+CUDA Error: invalid argument, at line 154
+sigma is: 0.6
+Called with args:
+Namespace(batch_size=1, cfg_file='cfgs/vgg16.yml', checkepoch=15, checkpoint=1272, checksession=1, class_agnostic=False, cuda=False, dataset='pascal_voc', load_dir=['./fpn_remove_6', '--sig', '0.6', '--cuda'], mGPUs=False, net='res101', parallel_type=0, set_cfgs=None, sig=None, vis=False)
+WARNING: You have a CUDA device, so you should probably run with --cuda
+##############################
+('num_classes:', 11)
+##############################
+Loaded dataset `voc_2007_test` for training
+Set proposal method: gt
+Preparing training data...
+voc_2007_test gt roidb loaded from /home/ksuresh/fpn.pytorch-master/data/cache/voc_2007_test_gt_roidb.pkl
+done
+##############################
+('num_classes:', 11)
+##############################
+548 roidb entries
+input_dir is: ./fpn_remove_6/res101/pascal_voc
+Loading pretrained weights from data/pretrained_model/resnet101_caffe.pth
+load checkpoint ./fpn_remove_6/res101/pascal_voc/fpn_1_15_1272.pth
+load model successfully!
+CUDA Error: invalid argument, at line 147
+CUDA Error: invalid argument, at line 154
+sigma is: 0.7
+Called with args:
+Namespace(batch_size=1, cfg_file='cfgs/vgg16.yml', checkepoch=15, checkpoint=1272, checksession=1, class_agnostic=False, cuda=False, dataset='pascal_voc', load_dir=['./fpn_remove_6', '--sig', '0.7', '--cuda'], mGPUs=False, net='res101', parallel_type=0, set_cfgs=None, sig=None, vis=False)
+WARNING: You have a CUDA device, so you should probably run with --cuda
+##############################
+('num_classes:', 11)
+##############################
+Loaded dataset `voc_2007_test` for training
+Set proposal method: gt
+Preparing training data...
+voc_2007_test gt roidb loaded from /home/ksuresh/fpn.pytorch-master/data/cache/voc_2007_test_gt_roidb.pkl
+done
+##############################
+('num_classes:', 11)
+##############################
+548 roidb entries
+input_dir is: ./fpn_remove_6/res101/pascal_voc
+Loading pretrained weights from data/pretrained_model/resnet101_caffe.pth
+load checkpoint ./fpn_remove_6/res101/pascal_voc/fpn_1_15_1272.pth
+load model successfully!
+CUDA Error: invalid argument, at line 147
+CUDA Error: invalid argument, at line 154
+sigma is: 0.8
+Called with args:
+Namespace(batch_size=1, cfg_file='cfgs/vgg16.yml', checkepoch=15, checkpoint=1272, checksession=1, class_agnostic=False, cuda=False, dataset='pascal_voc', load_dir=['./fpn_remove_6', '--sig', '0.8', '--cuda'], mGPUs=False, net='res101', parallel_type=0, set_cfgs=None, sig=None, vis=False)
+WARNING: You have a CUDA device, so you should probably run with --cuda
+##############################
+('num_classes:', 11)
+##############################
+Loaded dataset `voc_2007_test` for training
+Set proposal method: gt
+Preparing training data...
+voc_2007_test gt roidb loaded from /home/ksuresh/fpn.pytorch-master/data/cache/voc_2007_test_gt_roidb.pkl
+done
+##############################
+('num_classes:', 11)
+##############################
+548 roidb entries
+input_dir is: ./fpn_remove_6/res101/pascal_voc
+Loading pretrained weights from data/pretrained_model/resnet101_caffe.pth
+load checkpoint ./fpn_remove_6/res101/pascal_voc/fpn_1_15_1272.pth
+load model successfully!
+CUDA Error: invalid argument, at line 147
+CUDA Error: invalid argument, at line 154
+sigma is: 0.9
+Called with args:
+Namespace(batch_size=1, cfg_file='cfgs/vgg16.yml', checkepoch=15, checkpoint=1272, checksession=1, class_agnostic=False, cuda=False, dataset='pascal_voc', load_dir=['./fpn_remove_6', '--sig', '0.9', '--cuda'], mGPUs=False, net='res101', parallel_type=0, set_cfgs=None, sig=None, vis=False)
+WARNING: You have a CUDA device, so you should probably run with --cuda
+##############################
+('num_classes:', 11)
+##############################
+Loaded dataset `voc_2007_test` for training
+Set proposal method: gt
+Preparing training data...
+voc_2007_test gt roidb loaded from /home/ksuresh/fpn.pytorch-master/data/cache/voc_2007_test_gt_roidb.pkl
+done
+##############################
+('num_classes:', 11)
+##############################
+548 roidb entries
+input_dir is: ./fpn_remove_6/res101/pascal_voc
+Loading pretrained weights from data/pretrained_model/resnet101_caffe.pth
+load checkpoint ./fpn_remove_6/res101/pascal_voc/fpn_1_15_1272.pth
+load model successfully!
+CUDA Error: invalid argument, at line 147
+CUDA Error: invalid argument, at line 154
+sigma is: 1.0
+Called with args:
+Namespace(batch_size=1, cfg_file='cfgs/vgg16.yml', checkepoch=15, checkpoint=1272, checksession=1, class_agnostic=False, cuda=False, dataset='pascal_voc', load_dir=['./fpn_remove_6', '--sig', '1.0', '--cuda'], mGPUs=False, net='res101', parallel_type=0, set_cfgs=None, sig=None, vis=False)
+WARNING: You have a CUDA device, so you should probably run with --cuda
+##############################
+('num_classes:', 11)
+##############################
+Loaded dataset `voc_2007_test` for training
+Set proposal method: gt
+Preparing training data...
+voc_2007_test gt roidb loaded from /home/ksuresh/fpn.pytorch-master/data/cache/voc_2007_test_gt_roidb.pkl
+done
+##############################
+('num_classes:', 11)
+##############################
+548 roidb entries
+input_dir is: ./fpn_remove_6/res101/pascal_voc
+Loading pretrained weights from data/pretrained_model/resnet101_caffe.pth
+load checkpoint ./fpn_remove_6/res101/pascal_voc/fpn_1_15_1272.pth
+load model successfully!
+CUDA Error: invalid argument, at line 147
+CUDA Error: invalid argument, at line 154
+sigma is: 1.1
+Called with args:
+Namespace(batch_size=1, cfg_file='cfgs/vgg16.yml', checkepoch=15, checkpoint=1272, checksession=1, class_agnostic=False, cuda=False, dataset='pascal_voc', load_dir=['./fpn_remove_6', '--sig', '1.1', '--cuda'], mGPUs=False, net='res101', parallel_type=0, set_cfgs=None, sig=None, vis=False)
+WARNING: You have a CUDA device, so you should probably run with --cuda
+##############################
+('num_classes:', 11)
+##############################
+Loaded dataset `voc_2007_test` for training
+Set proposal method: gt
+Preparing training data...
+voc_2007_test gt roidb loaded from /home/ksuresh/fpn.pytorch-master/data/cache/voc_2007_test_gt_roidb.pkl
+done
+##############################
+('num_classes:', 11)
+##############################
+548 roidb entries
+input_dir is: ./fpn_remove_6/res101/pascal_voc
+Loading pretrained weights from data/pretrained_model/resnet101_caffe.pth
+load checkpoint ./fpn_remove_6/res101/pascal_voc/fpn_1_15_1272.pth
+load model successfully!
+CUDA Error: invalid argument, at line 147
+CUDA Error: invalid argument, at line 154
+job done!
