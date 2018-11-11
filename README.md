@@ -17,12 +17,6 @@ do
 done
 
 ```
-## UAVDT Data (Training+Testing) in Pascal Voc Format
-Google Drive: https://drive.google.com/file/d/13xdLBfIWGYrjpT0Z3miAPKnKNDjNqLS9/view?usp=sharing
-
-## UAVDT Trained Model (w/o Adversarial Loss and w/ Adversarial Loss)
-Google Drive: https://drive.google.com/file/d/1rxqr0Cq0y9cXhdWyNd_R_8cd68exD1wn/view?usp=sharing
-
 
 ## Project Directory Layout
 ```
