@@ -4,7 +4,7 @@
 #!/bin/bash
 CUDA_VISIBLE_DEVICES=0,1 python trainval_net_monitor.py --cuda --mGPUs --retraining_steps 250 --monitor_discriminator True --use_adversarial_loss True --use_utility_loss True --use_restarting --bs 8 --gamma 0.01 --depth 3 --save_iters 100 --n_minibatches 2
 ```
-## Single GPU Training
+## Single GPU Testing
 ```{r, engine='bash', count_lines}
 #!/bin/bash
 for ((i=0; i<=10; i++))
