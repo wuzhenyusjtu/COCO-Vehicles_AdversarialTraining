@@ -387,8 +387,8 @@ if __name__ == '__main__':
         os.makedirs(model_dir)
     if not os.path.exists(summary_dir):
         os.makedirs(summary_dir)
-    train_summary_file = open(os.path.join(summary_dir, 'train_summary.txt'), 'wb', 0)
-    val_summary_file = open(os.path.join(summary_dir, 'val_summary.txt'), 'wb', 0)
+    #train_summary_file = open(os.path.join(summary_dir, 'train_summary.txt'), 'w', 0)
+    #val_summary_file = open(os.path.join(summary_dir, 'val_summary.txt'), 'w', 0)
 
     while niter < iters_per_epoch * ((args.max_epochs - args.start_epoch) + 1):
         fasterRCNN.zero_grad()
@@ -673,11 +673,11 @@ if __name__ == '__main__':
                 isRestarting = lambda bool: "Restart" if bool else "NoRestart"
                 logger.add_scalars("logs_{}_{}_{}/losses_train".format(args.gamma, isRestarting(args.use_restarting), args.depth), info, niter)
 
-            train_summary_file.write("[session %d][epoch %2d][iter %4d/%4d] scale accuracy: %.4f, utility loss: %.4f, auxiliary loss: %.4f, adversarial loss: %.4f, utility+adversarial loss: %.4f, lr: %.2e\n" \
-                % (args.session, niter // iters_per_epoch + 1, niter % iters_per_epoch, iters_per_epoch,
-                   acc_temp, loss_util_temp, loss_aux_temp, loss_adv_temp, loss_temp, lr))
-            train_summary_file.write("\t\t\trpn_cls: %.4f, rpn_box: %.4f, rcnn_cls: %.4f, rcnn_box %.4f\n" \
-                % (loss_rpn_cls_temp, loss_rpn_box_temp, loss_rcnn_cls_temp, loss_rcnn_box_temp))
+            # train_summary_file.write("[session %d][epoch %2d][iter %4d/%4d] scale accuracy: %.4f, utility loss: %.4f, auxiliary loss: %.4f, adversarial loss: %.4f, utility+adversarial loss: %.4f, lr: %.2e\n" \
+            #     % (args.session, niter // iters_per_epoch + 1, niter % iters_per_epoch, iters_per_epoch,
+            #        acc_temp, loss_util_temp, loss_aux_temp, loss_adv_temp, loss_temp, lr))
+            # train_summary_file.write("\t\t\trpn_cls: %.4f, rpn_box: %.4f, rcnn_cls: %.4f, rcnn_box %.4f\n" \
+            #     % (loss_rpn_cls_temp, loss_rpn_box_temp, loss_rcnn_cls_temp, loss_rcnn_box_temp))
 
             '''Validation evaluation'''
             loss_temp = 0
@@ -765,11 +765,12 @@ if __name__ == '__main__':
                 isRestarting = lambda bool: "Restart" if bool else "NoRestart"
                 logger.add_scalars("logs_{}_{}/losses_val".format(args.gamma, isRestarting(args.use_restarting), args.depth), info, niter)
 
-            val_summary_file.write("[session %d][epoch %2d][iter %4d/%4d] scale accuracy: %.4f, utility loss: %.4f, auxiliary loss: %.4f, adversarial loss: %.4f, utility+adversarial loss: %.4f, lr: %.2e\n" \
-                    % (args.session, niter // iters_per_epoch + 1, niter % iters_per_epoch, iters_per_epoch,
-                    acc_temp, loss_util_temp, loss_aux_temp, loss_adv_temp, loss_temp, lr))
-            val_summary_file.write("\t\t\trpn_cls: %.4f, rpn_box: %.4f, rcnn_cls: %.4f, rcnn_box %.4f\n" \
-                    % (loss_rpn_cls_temp, loss_rpn_box_temp, loss_rcnn_cls_temp, loss_rcnn_box_temp))
+            # val_summary_file.write("[session %d][epoch %2d][iter %4d/%4d] scale accuracy: %.4f, utility loss: %.4f, auxiliary loss: %.4f, adversarial loss: %.4f, utility+adversarial loss: %.4f, lr: %.2e\n" \
+            #         % (args.session, niter // iters_per_epoch + 1, niter % iters_per_epoch, iters_per_epoch,
+            #         acc_temp, loss_util_temp, loss_aux_temp, loss_adv_temp, loss_temp, lr))
+            # val_summary_file.write("\t\t\trpn_cls: %.4f, rpn_box: %.4f, rcnn_cls: %.4f, rcnn_box %.4f\n" \
+            #         % (loss_rpn_cls_temp, loss_rpn_box_temp, loss_rcnn_cls_temp, loss_rcnn_box_temp))
+
             start = time.time()
 
         if niter % args.save_iters == 0:
@@ -790,8 +791,8 @@ if __name__ == '__main__':
 
         niter += 1
 
-    train_summary_file.close()
-    val_summary_file.close()
+    #train_summary_file.close()
+    #val_summary_file.close()
 
     if args.use_tfboard:
         logger.close()
