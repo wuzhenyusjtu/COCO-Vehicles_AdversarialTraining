@@ -35,6 +35,10 @@ from model.faster_rcnn.resnet import resnet
 import itertools
 import math
 
+try:
+    FileNotFoundError
+except NameError:
+    FileNotFoundError = IOError
 
 # os.environ["CUDA_VISIBLE_DEVICES"]="3"
 
