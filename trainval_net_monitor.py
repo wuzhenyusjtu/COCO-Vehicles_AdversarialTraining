@@ -35,12 +35,13 @@ from model.faster_rcnn.resnet import resnet
 import itertools
 import math
 
+
+# os.environ["CUDA_VISIBLE_DEVICES"]="3"
+
 try:
     FileNotFoundError
 except NameError:
     FileNotFoundError = IOError
-
-# os.environ["CUDA_VISIBLE_DEVICES"]="3"
 
 def str2bool(v):
     if v.lower() in ('yes', 'true', 't', 'y', '1'):
@@ -416,7 +417,7 @@ if __name__ == '__main__':
                 for _ in itertools.repeat(None, args.n_minibatches):
                     try:
                         data = next(data_iter_train)
-                    except StopIteration:
+                    except Exception:
                         data_iter_train = iter(dataloader_train)
                         data = next(data_iter_train)
                     im_data.data.resize_(data[0].size()).copy_(data[0])
@@ -424,9 +425,17 @@ if __name__ == '__main__':
                     gt_boxes.data.resize_(data[2].size()).copy_(data[2])
                     num_boxes.data.resize_(data[3].size()).copy_(data[3])
 
-                    rois, cls_prob, bbox_pred, rpn_loss_cls, rpn_loss_bbox, RCNN_loss_cls, RCNN_loss_bbox, \
-                    RCNN_loss_scale, RCNN_loss_scale_adv, RCNN_acc_scale, \
-                    rois_label = fasterRCNN(im_data, im_info, gt_boxes, num_boxes)
+                    try:
+                        rois, cls_prob, bbox_pred, rpn_loss_cls, rpn_loss_bbox, RCNN_loss_cls, RCNN_loss_bbox, \
+                        RCNN_loss_scale, RCNN_loss_scale_adv, RCNN_acc_scale, \
+                        rois_label = fasterRCNN(im_data, im_info, gt_boxes, num_boxes)
+                    except Exception:
+                        sys.exc_clear()
+                        print(im_data)
+                        print(im_info)
+                        print(gt_boxes)
+                        print('Catching TypeError: forward() takes at least 6 arguments (2 given)')
+                        continue
 
                     loss_scale = RCNN_loss_scale.mean()
                     loss_scale_adv = RCNN_loss_scale_adv.mean()
@@ -462,18 +471,27 @@ if __name__ == '__main__':
             for _ in itertools.repeat(None, args.n_minibatches):
                 try:
                     data = next(data_iter_train)
-                except StopIteration:
+                except Exception:
                     data_iter_train = iter(dataloader_train)
                     data = next(data_iter_train)
                 im_data.data.resize_(data[0].size()).copy_(data[0])
                 im_info.data.resize_(data[1].size()).copy_(data[1])
                 gt_boxes.data.resize_(data[2].size()).copy_(data[2])
                 num_boxes.data.resize_(data[3].size()).copy_(data[3])
-                rois, cls_prob, bbox_pred, \
-                rpn_loss_cls, rpn_loss_box, \
-                RCNN_loss_cls, RCNN_loss_bbox, \
-                RCNN_loss_scale, RCNN_loss_scale_adv, RCNN_acc_scale, \
-                rois_label = fasterRCNN(im_data, im_info, gt_boxes, num_boxes)
+
+                try:
+                    rois, cls_prob, bbox_pred, \
+                    rpn_loss_cls, rpn_loss_box, \
+                    RCNN_loss_cls, RCNN_loss_bbox, \
+                    RCNN_loss_scale, RCNN_loss_scale_adv, RCNN_acc_scale, \
+                    rois_label = fasterRCNN(im_data, im_info, gt_boxes, num_boxes)
+                except Exception:
+                    sys.exc_clear()
+                    print(im_data)
+                    print(im_info)
+                    print(gt_boxes)
+                    print('Catching TypeError: forward() takes at least 6 arguments (2 given)')
+                    continue
 
                 loss_rpn = rpn_loss_cls.mean() + rpn_loss_box.mean()
                 loss_rcnn = RCNN_loss_cls.mean() + RCNN_loss_bbox.mean()
@@ -507,18 +525,27 @@ if __name__ == '__main__':
             for _ in itertools.repeat(None, args.n_minibatches):
                 try:
                     data = next(data_iter_train)
-                except StopIteration:
+                except Exception:
                     data_iter_train = iter(dataloader_train)
                     data = next(data_iter_train)
                 im_data.data.resize_(data[0].size()).copy_(data[0])
                 im_info.data.resize_(data[1].size()).copy_(data[1])
                 gt_boxes.data.resize_(data[2].size()).copy_(data[2])
                 num_boxes.data.resize_(data[3].size()).copy_(data[3])
-                rois, cls_prob, bbox_pred, \
-                rpn_loss_cls, rpn_loss_box, \
-                RCNN_loss_cls, RCNN_loss_bbox, \
-                RCNN_loss_scale, RCNN_loss_scale_adv, RCNN_acc_scale, \
-                rois_label = fasterRCNN(im_data, im_info, gt_boxes, num_boxes)
+
+                try:
+                    rois, cls_prob, bbox_pred, \
+                    rpn_loss_cls, rpn_loss_box, \
+                    RCNN_loss_cls, RCNN_loss_bbox, \
+                    RCNN_loss_scale, RCNN_loss_scale_adv, RCNN_acc_scale, \
+                    rois_label = fasterRCNN(im_data, im_info, gt_boxes, num_boxes)
+                except Exception:
+                    sys.exc_clear()
+                    print(im_data)
+                    print(im_info)
+                    print(gt_boxes)
+                    print('Catching TypeError: forward() takes at least 6 arguments (2 given)')
+                    continue
 
                 loss_rpn = rpn_loss_cls.mean() + rpn_loss_box.mean()
                 loss_rcnn = RCNN_loss_cls.mean() + RCNN_loss_bbox.mean()
@@ -552,7 +579,7 @@ if __name__ == '__main__':
                 for _ in itertools.repeat(None, args.n_minibatches):
                     try:
                         data = next(data_iter_train)
-                    except StopIteration:
+                    except Exception:
                         data_iter_train = iter(dataloader_train)
                         data = next(data_iter_train)
                     im_data.data.resize_(data[0].size()).copy_(data[0])
@@ -560,11 +587,19 @@ if __name__ == '__main__':
                     gt_boxes.data.resize_(data[2].size()).copy_(data[2])
                     num_boxes.data.resize_(data[3].size()).copy_(data[3])
 
-                    rois, cls_prob, bbox_pred, \
-                    rpn_loss_cls, rpn_loss_box, \
-                    RCNN_loss_cls, RCNN_loss_bbox, \
-                    RCNN_loss_scale, RCNN_loss_scale_adv, RCNN_acc_scale, \
-                    rois_label = fasterRCNN(im_data, im_info, gt_boxes, num_boxes)
+                    try:
+                        rois, cls_prob, bbox_pred, \
+                        rpn_loss_cls, rpn_loss_box, \
+                        RCNN_loss_cls, RCNN_loss_bbox, \
+                        RCNN_loss_scale, RCNN_loss_scale_adv, RCNN_acc_scale, \
+                        rois_label = fasterRCNN(im_data, im_info, gt_boxes, num_boxes)
+                    except Exception:
+                        sys.exc_clear()
+                        print(im_data)
+                        print(im_info)
+                        print(gt_boxes)
+                        print('Catching TypeError: forward() takes at least 6 arguments (2 given)')
+                        continue
 
                     loss_scale = RCNN_loss_scale.mean()
                     loss_scale_adv = RCNN_loss_scale_adv.mean()
@@ -608,18 +643,26 @@ if __name__ == '__main__':
                 for _ in itertools.repeat(None, args.n_minibatches_eval):
                     try:
                         data = next(data_iter_train)
-                    except StopIteration:
+                    except Exception:
                         data_iter_train = iter(dataloader_train)
                         data = next(data_iter_train)
                     im_data.data.resize_(data[0].size()).copy_(data[0])
                     im_info.data.resize_(data[1].size()).copy_(data[1])
                     gt_boxes.data.resize_(data[2].size()).copy_(data[2])
                     num_boxes.data.resize_(data[3].size()).copy_(data[3])
-                    rois, cls_prob, bbox_pred, \
-                    rpn_loss_cls, rpn_loss_box, \
-                    RCNN_loss_cls, RCNN_loss_bbox, \
-                    RCNN_loss_scale, RCNN_loss_scale_adv, RCNN_acc_scale, \
-                    rois_label = fasterRCNN(im_data, im_info, gt_boxes, num_boxes)
+                    try:
+                        rois, cls_prob, bbox_pred, \
+                        rpn_loss_cls, rpn_loss_box, \
+                        RCNN_loss_cls, RCNN_loss_bbox, \
+                        RCNN_loss_scale, RCNN_loss_scale_adv, RCNN_acc_scale, \
+                        rois_label = fasterRCNN(im_data, im_info, gt_boxes, num_boxes)
+                    except Exception:
+                        sys.exc_clear()
+                        print(im_data)
+                        print(im_info)
+                        print(gt_boxes)
+                        print('Catching TypeError: forward() takes at least 6 arguments (2 given)')
+                        continue
 
                     loss_rpn = rpn_loss_cls.mean() + rpn_loss_box.mean()
                     loss_rcnn = RCNN_loss_cls.mean() + RCNN_loss_bbox.mean()
@@ -700,19 +743,26 @@ if __name__ == '__main__':
                 for _ in itertools.repeat(None, args.n_minibatches_eval):
                     try:
                         data = next(data_iter_val)
-                    except StopIteration:
+                    except Exception:
                         data_iter_val = iter(dataloader_val)
                         data = next(data_iter_val)
                     im_data.data.resize_(data[0].size()).copy_(data[0])
                     im_info.data.resize_(data[1].size()).copy_(data[1])
                     gt_boxes.data.resize_(data[2].size()).copy_(data[2])
                     num_boxes.data.resize_(data[3].size()).copy_(data[3])
-                    rois, cls_prob, bbox_pred, \
-                    rpn_loss_cls, rpn_loss_box, \
-                    RCNN_loss_cls, RCNN_loss_bbox, \
-                    RCNN_loss_scale, RCNN_loss_scale_adv, RCNN_acc_scale, \
-                    rois_label = fasterRCNN(im_data, im_info, gt_boxes, num_boxes)
-
+                    try:
+                        rois, cls_prob, bbox_pred, \
+                        rpn_loss_cls, rpn_loss_box, \
+                        RCNN_loss_cls, RCNN_loss_bbox, \
+                        RCNN_loss_scale, RCNN_loss_scale_adv, RCNN_acc_scale, \
+                        rois_label = fasterRCNN(im_data, im_info, gt_boxes, num_boxes)
+                    except Exception:
+                        sys.exc_clear()
+                        print(im_data)
+                        print(im_info)
+                        print(gt_boxes)
+                        print('Catching TypeError: forward() takes at least 6 arguments (2 given)')
+                        continue
                     loss_rpn = rpn_loss_cls.mean() + rpn_loss_box.mean()
                     loss_rcnn = RCNN_loss_cls.mean() + RCNN_loss_bbox.mean()
                     loss_scale = RCNN_loss_scale.mean()
