@@ -121,7 +121,7 @@ def parse_args():
     # resume trained model
     parser.add_argument('--r', dest='resume',
                         help='resume checkpoint or not',
-                        default=True, type=str2bool)
+                        default=False, type=str2bool)
     parser.add_argument('--checksession', dest='checksession',
                         help='checksession to load model',
                         default=1, type=int)
@@ -172,7 +172,9 @@ def parse_args():
     parser.add_argument('--depth', dest='depth',
                         help='the depth of the discriminator',
                         type=int, required=True)
-
+    parser.add_argument('--niter', dest='niter',
+                        help='number of iteration as starting',
+                        default=0, type=int)
     args = parser.parse_args()
     return args
 
@@ -349,7 +351,43 @@ if __name__ == '__main__':
     adv_optimizer = torch.optim.SGD(params_adv)
     print(params_keys_aux)
     print(params_keys_adv)
+
+    model_dir = os.path.join(args.model_dir, str(args.depth), str(args.gamma))
+    summary_dir = os.path.join(args.summary_dir, str(args.depth), str(args.gamma))
+    if not os.path.exists(model_dir):
+        os.makedirs(model_dir)
+    if not os.path.exists(summary_dir):
+        os.makedirs(summary_dir)
+
     if args.resume:
+        load_name = os.path.join(model_dir, 'faster_rcnn_{}_{}_{}_adv.pth'.format(args.checksession, args.checkepoch,
+                                                                       args.checkpoint))
+        print("loading checkpoint %s" % (load_name))
+        checkpoint = torch.load(load_name)
+        args.session = checkpoint['session']
+        args.start_epoch = checkpoint['epoch']
+
+        model_dict = fasterRCNN.state_dict()
+        model_dict.update(checkpoint['model'])
+        fasterRCNN.load_state_dict(model_dict)
+
+        util_optimizer.load_state_dict(checkpoint['util_optimizer'])
+        for state in util_optimizer.state.values():
+            for k,v in state.items():
+                if isinstance(v, torch.Tensor):
+                    state[k] = v.cuda()
+        aux_optimizer.load_state_dict(checkpoint['aux_optimizer'])
+        for state in aux_optimizer.state.values():
+            for k,v in state.items():
+                if isinstance(v, torch.Tensor):
+                    state[k] = v.cuda()
+        adv_optimizer.load_state_dict(checkpoint['ad_optimizer'])
+        for state in adv_optimizer.state.values():
+            for k,v in state.items():
+                if isinstance(v, torch.Tensor):
+                    state[k] = v.cuda()
+        print("loaded checkpoint %s" % (load_name))
+    else:
         load_name = os.path.join(os.path.join(args.model_dir, 'baseline', 'coco-vehicles-subset'),
                                  'faster_rcnn_{}_{}_{}.pth'.format(args.checksession, args.checkepoch, args.checkpoint))
         print("loading checkpoint %s" % (load_name))
@@ -382,16 +420,11 @@ if __name__ == '__main__':
 
         logger = SummaryWriter("logs")
 
-    niter = 0
+    niter = args.niter
     fasterRCNN.train()
     data_iter_train = iter(dataloader_train)
     data_iter_val = iter(dataloader_val)
-    model_dir = os.path.join(args.model_dir, str(args.depth), str(args.gamma))
-    summary_dir = os.path.join(args.summary_dir, str(args.depth), str(args.gamma))
-    if not os.path.exists(model_dir):
-        os.makedirs(model_dir)
-    if not os.path.exists(summary_dir):
-        os.makedirs(summary_dir)
+
     #train_summary_file = open(os.path.join(summary_dir, 'train_summary.txt'), 'w', 0)
     #val_summary_file = open(os.path.join(summary_dir, 'val_summary.txt'), 'w', 0)
 
